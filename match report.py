@@ -233,11 +233,18 @@ if response.status_code == 200:
         writer = csv.writer(csv_file)
         
         # Write header row
-        header = ["Date", "Venue", "Attendance", "Home Team", "Away Team", "Home Manager", "Away Manager", "Home Captain", "Away Captain", "Other Column Headers..."]
+        header = ["Date", "Venue", "Attendance", "Refree", "Home Team", "Home xG", "Home Goals", "Home Formation", "Home Possession %", "Home Passing Accuracy", "Home Shots On", 
+                  "Home Saves", "Home Fouls", "Home Corners", "Home Crosses", "Home Touches", "Home Intercepts", "Home Aerials Won", "Home Clearances", "Home Offsides", 
+                  "Home Goal Kicks", "Home Throw Ins", "Home Long Balls", "Away Team", "Away xG", "Away Goals", "Away Formation", "Away Possession %", "Away Passing Accuracy", 
+                  "Away Shots On", "Away Saves", "Away Fouls", "Away Corners", "Away Crosses", "Away Touches", "Away Intercepts", "Away Aerials Won", "Away Clearances", 
+                  "Away Offsides", "Away Goal Kicks", "Away Throw Ins", "Away Long Balls"]
         writer.writerow(header)
         
         # Write data to CSV
-        data = [date, venue, attendance, refree, "Other Data..."]
+        data = [date, venue, attendance, refree, home_team, home_xg, home_goals, home_formation, home_possession, home_passing_accuracy, home_shots_on, home_saves, home_fouls,
+                home_corners, home_crosses, home_touches, home_interceptions, home_aerials, home_clearances, home_offsides, home_gk, home_ti, home_lb, away_team, away_xg, 
+                away_goals, away_formation, away_possession, away_passing_accuracy, away_shots_on, away_saves, away_fouls, away_corners, away_crosses, away_touches, 
+                away_interceptions, away_aerials, away_clearances, away_offsides, away_gk, away_ti, away_lb]
         writer.writerow(data)
         
     print("Match information written to CSV file.")
