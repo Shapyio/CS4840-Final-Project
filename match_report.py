@@ -29,8 +29,11 @@ def get_match_report(match_report_url, headers):
         venue = venue_element.text.strip() if venue_element else "Venue not found"
 
         # ATTENDANCE
-        attendance_element = score_metabox_soup.find_all('div')[-3].find_all('small')[-1]
-        attendance = attendance_element.text.strip() if attendance_element else "Attendance not found"
+        if len(score_metabox_soup.find_all('div')[-3].find_all('small')) >= 2:
+            attendance_element = score_metabox_soup.find_all('div')[-3].find_all('small')[-1]
+            attendance = attendance_element.text.strip() if attendance_element else "Attendance not found"
+        else:
+            attendance = "Attendance not found"
 
         # REFREE
         refree_element = score_metabox_soup.find_all('div')[-1].find('small').find_next().find('span')
@@ -127,11 +130,11 @@ def get_match_report(match_report_url, headers):
         away_team = away_team_element.text.strip() if away_team_element else "Away team name not found"
 
         # Away Expected Goals
-        away_xg_element = scorebox_soup.find_all()[1].find('div', {'class' : 'score_xg'})
+        away_xg_element = scorebox_soup.find_all('div', {'class' : 'score_xg'})[-1]
         away_xg = away_xg_element.text.strip() if away_xg_element else "Away xG not found"
 
         # Away Goals
-        away_goals_element = scorebox_soup.find_all()[1].find('div', {'class' : 'score'})
+        away_goals_element = scorebox_soup.find_all('div', {'class' : 'score'})[-1]
         away_goals = away_goals_element.text.strip() if away_goals_element else "Away goals not found"
 
         # Away Team Formation
@@ -209,8 +212,8 @@ def get_match_report(match_report_url, headers):
                     home_corners, home_crosses, home_touches, home_interceptions, home_aerials, home_clearances, home_offsides, home_gk, home_ti, home_lb, away_team, away_xg, 
                     away_goals, away_formation, away_possession, away_passing_accuracy, away_shots_on, away_saves, away_fouls, away_corners, away_crosses, away_touches, 
                     away_interceptions, away_aerials, away_clearances, away_offsides, away_gk, away_ti, away_lb]
-        
-        print("\nDATE: ", date)
-        print("MATCH: ", home_team," vs. ", away_team)
-            
-    return data
+        if data:
+            print(venue + " (" + date + ") - " + home_team + " vs " + away_team)    
+            return data
+        else:
+            return "No match data found"

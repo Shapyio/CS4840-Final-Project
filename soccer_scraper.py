@@ -5,6 +5,7 @@ import match_report
 import re
 
 def get_seasons(url, header):
+        print("GETTING SEASONS...", end='')
         seasons_link_exts = []
 
         response = requests.get(url, header)
@@ -13,19 +14,19 @@ def get_seasons(url, header):
                 html_soup = BeautifulSoup(response.text, 'html.parser')
 
                 table_element = html_soup.find('table')
-                rows = table_element.find_all('tr')
+                # Gets every element part of rows
+                seasons = table_element.find_all('th', {'data-stat' : 'year_id', 'scope' : 'row'})
 
-                for r in rows:
-                        columns = r.find_all('td')
-                        for c in columns:
-                                if c['data-stat'] == 'year_id' and c.text.strip() != "1993-1994" :
-                                        seasons_link_exts.append(c.find('a')['href'])
-                                elif c['data-stat'] == 'year_id' and c.text.strip() == "1993-1994":
-                                        break
-        
+                for s in seasons:
+                        if s.find('a') and s.find('a').text.strip() != "1993-1994":
+                                seasons_link_exts.append(s.find('a')['href'])
+                        else:
+                                break
+        print("DONE")
         return seasons_link_exts
 
 def get_matches(url, header, links):
+        print("GETTING MATCHES...", end='')
         matches_links_list = []
         for ext in links:
 
@@ -42,10 +43,12 @@ def get_matches(url, header, links):
                                 for c in columns:
                                         if c['data-stat'] == 'match_report' and c.text.strip() == "Match Report" :
                                                 matches_links_list.append(c.find('a')['href'])
-                
+        
+        print("DONE")
         return matches_links_list
 
 def convert_urls(original_urls):
+    print("FORMATTING URLS...", end='')
     converted_urls = []
     # Use regular expression to match the pattern and extract relevant parts
     for url in original_urls:
@@ -61,8 +64,9 @@ def convert_urls(original_urls):
 
                 converted_urls.append(converted_url)
 
-    # Return the original URL if no match is found
-    return converted_urls
+        print("DONE")
+        # Return the original URL if no match is found
+        return converted_urls
 
 # MAIN STARTS HERE 
 URL = "https://fbref.com" # Base website link
@@ -84,14 +88,17 @@ with open('match_report_info.csv', 'w', newline='', encoding='utf-8') as csv_fil
         writer.writerow(header)
 
         # Running method to get all applicable seasons
+        links = get_seasons(URL + EXT, HEADER)
         links = convert_urls(get_seasons(URL + EXT, HEADER))
         # Conversion removes current season so I added it in manually
-        links.insert(0, "/en/comps/9/schedule/Premier-League-Scores-and-Fixtures") 
+        links.insert(0, "/en/comps/9/schedule/Premier-League-Scores-and-Fixtures")
         # From season links, get all the matches
         links = get_matches(URL, HEADER, links) 
-
+        print("NUMBER OF MATCHES: ", len(links))
+        print("STARTING TO WRITE DATA...")
         # Write data to CSV
-        for ext in links:
-                writer.writerow((match_report.get_match_report(URL + ext, HEADER)))
+        for i in links:
+                writer.writerow((match_report.get_match_report(URL + i, HEADER)))
+        print("DONE")
         
         print("Match information written to CSV file.")
