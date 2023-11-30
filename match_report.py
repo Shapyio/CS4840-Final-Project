@@ -212,8 +212,7 @@ def get_match_report(match_report_url, headers):
                     home_corners, home_crosses, home_touches, home_interceptions, home_aerials, home_clearances, home_offsides, home_gk, home_ti, home_lb, away_team, away_xg, 
                     away_goals, away_formation, away_possession, away_passing_accuracy, away_shots_on, away_saves, away_fouls, away_corners, away_crosses, away_touches, 
                     away_interceptions, away_aerials, away_clearances, away_offsides, away_gk, away_ti, away_lb]
-        if data:
-            print(venue + " (" + date + ") - " + home_team + " vs " + away_team)    
-            return data
-        else:
-            return "No match data found"
+        
+        print(venue + " (" + date + ") - " + home_team + " vs " + away_team)
+
+    return data
