@@ -284,3 +284,14 @@
 /en/matches/482ab595/Liverpool-Arsenal-December-21-2014-Premier-League
 /en/matches/af5000da/Newcastle-United-Sunderland-December-21-2014-Premier-League
 /en/matches/f7aed3a6/Queens-Park-Rangers-West-Bromwich-Albion-December-20-2014-Premier-League
+/en/matches/af7488bd/Burnley-Bournemouth-December-10-2016-Premier-League
+/en/matches/481fc676/Liverpool-Manchester-City-January-14-2018-Premier-League
+/en/matches/88a05211/Southampton-Everton-January-19-2019-Premier-League
+/en/matches/bf4afd61/Leicester-City-Wolverhampton-Wanderers-August-11-2019-Premier-League
+/en/matches/34b99058/Burnley-Southampton-August-10-2019-Premier-League
+/en/matches/fcad17a1/Tottenham-Hotspur-Fulham-January-13-2021-Premier-League
+/en/matches/9926f1f0/Manchester-City-Brighton-and-Hove-Albion-January-13-2021-Premier-League
+/en/matches/0f029791/Brentford-Norwich-City-November-6-2021-Premier-League
+/en/matches/f3e6e475/Manchester-United-Brentford-April-5-2023-Premier-League
+/en/matches/4a87012d/West-Ham-United-Newcastle-United-April-5-2023-Premier-League
+/en/matches/c916a5f6/Brighton-and-Hove-Albion-Newcastle-United-August-13-2022-Premier-League
