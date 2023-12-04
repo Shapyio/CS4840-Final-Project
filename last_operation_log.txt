@@ -244,7 +244,11 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
    <script>
     sr_utilities_js_loader.push(function() { vjs_createCookie('srcssfull', 'yes', 0.5 )});
    </script>
+<<<<<<< HEAD
    <meta content="11:28:38 04-Dec-2023" name="revised">
+=======
+   <meta content="20:05:18 03-Dec-2023" name="revised">
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
     <meta content="True" name="HandheldFriendly">
      <meta content="True" name="HandheldFriendly">
       <meta content="/home/fb/deploy/www/base_en/games/game.fcgi" name="generated-by"/>
@@ -4374,6 +4378,7 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
          Players
         </a>
         <div>
+<<<<<<< HEAD
          <a href="/en/players/53a0e358/Domenico-Berardi">
           Domenico Berardi
          </a>
@@ -4408,20 +4413,66 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
          ,
          <a href="/en/players/f61c7c4e/Franck-Ribery">
           Franck Ribéry
+=======
+         <a href="/en/players/4c5b14d2/Joaquin">
+          Joaquín
+         </a>
+         ,
+         <a href="/en/players/8b7ddf10/Megan-Rapinoe">
+          Megan Rapinoe
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
          </a>
          ,
          <a href="/en/players/3bb7f478/Edin-Dzeko">
           Edin Džeko
          </a>
          ,
+<<<<<<< HEAD
          <a href="/en/players/09586899/Arjen-Robben">
           Arjen Robben
+=======
+         <a href="/en/players/5056c581/Lucy-Bronze">
+          Lucy Bronze
          </a>
          ,
-         <a href="/en/players/ed75b6c7/Francesco-Totti">
-          Francesco Totti
+         <a href="/en/players/54b6ee79/Claudio-Pizarro">
+          Claudio Pizarro
          </a>
          ,
+         <a href="/en/players/7bc894ac/Homare-Sawa">
+          Homare Sawa
+         </a>
+         ,
+         <a href="/en/players/42276181/Kevin-Gameiro">
+          Kévin Gameiro
+         </a>
+         ,
+         <a href="/en/players/63b0ca6b/Alvaro-Negredo">
+          Álvaro Negredo
+         </a>
+         ,
+         <a href="/en/players/942b4f90/Wissam-Ben-Yedder">
+          Wissam Ben Yedder
+         </a>
+         ,
+         <a href="/en/players/f3746547/Ria-Percival">
+          Ria Percival
+         </a>
+         ,
+         <a href="/en/players/1d994521/Kosovare-Asllani">
+          Kosovare Asllani
+         </a>
+         ,
+         <a href="/en/players/b400bde0/Raheem-Sterling">
+          Raheem Sterling
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
+         </a>
+         ,
+         <a href="/en/players/a190d597/Diego-Costa">
+          Diego Costa
+         </a>
+         ,
+<<<<<<< HEAD
          <a href="/en/players/29733c72/Juan-Mata">
           Juan Mata
          </a>
@@ -4432,6 +4483,14 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
          ,
          <a href="/en/players/e2e9c250/Santi-Cazorla">
           Santi Cazorla
+=======
+         <a href="/en/players/019544ff/Caitlin-Foord">
+          Caitlin Foord
+         </a>
+         ,
+         <a href="/en/players/9dbb75ca/Alexandre-Lacazette">
+          Alexandre Lacazette
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
          </a>
          ,
          <a href="/en/players/">
@@ -5115,6 +5174,13 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
          Scores &amp; Fixtures
         </a>
         <div>
+<<<<<<< HEAD
+=======
+         <a href="/en/matches/2023-12-01">
+          Friday December 1, 2023
+         </a>
+         ,
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
          <a href="/en/matches/2023-12-02">
           Saturday December 2, 2023
          </a>
@@ -5130,10 +5196,13 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
          <a href="/en/matches/2023-12-05">
           Tuesday December 5, 2023
          </a>
+<<<<<<< HEAD
          ,
          <a href="/en/matches/2023-12-06">
           Wednesday December 6, 2023
          </a>
+=======
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
         </div>
        </li>
        <li>
@@ -5532,7 +5601,11 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
         <strong>
          Site Last Updated:
         </strong>
+<<<<<<< HEAD
         Monday, December  4,  5:54AM
+=======
+        Sunday, December  3,  2:05PM
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
        </p>
        <p>
         <a class="button" href="https://www.sports-reference.com/feedback/" style="display: block">
@@ -5790,7 +5863,11 @@ https://stathead.com/sport/fbref/?&amp;utm_medium=sr_xsite&amp;utm_source=fb&amp
   <script async="" defer="" id="hs-script-loader" src="//js.hs-scripts.com/20503178.js" type="text/javascript">
   </script>
   <!-- End of HubSpot Embed Code -->
+<<<<<<< HEAD
   <script crossorigin="anonymous" data-cf-beacon='{"rayId":"83056c71998d20b5","b":1,"version":"2023.10.0","token":"e4b4f9155f05483494faa3d260e4875f"}' defer="" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317">
+=======
+  <script crossorigin="anonymous" data-cf-beacon='{"rayId":"830023e67b0013aa","b":1,"version":"2023.10.0","token":"e4b4f9155f05483494faa3d260e4875f"}' defer="" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317">
+>>>>>>> 962818193398ba50768b509fb7fd191e3906b212
   </script>
  </body>
  <!-- SR -->
