@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from imblearn.under_sampling import RandomUnderSampler
+from imblearn.over_sampling import SMOTE
 # Preprocessing
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
@@ -18,8 +19,8 @@ data = pd.read_csv("match_report_data.csv", encoding='ISO-8859-1')
 
 # ========== Preprocessing ==========
 # Initial data
-print(data.head())
-data.info()
+# print(data.head())
+# data.info()
 
 # Visualized data
 #data.hist(bins=20, figsize=(15,10))
@@ -164,12 +165,59 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 # ========== Undersampling Data ==========
 rus = RandomUnderSampler(sampling_strategy='not majority', random_state=42) # Majority of games are value=2 (Home team loses), so we remove not majority to balance (less 0 and 1)
 # Fit and apply the undersampling
-X_resampled, y_resampled = rus.fit_resample(X.copy(), y.copy()) # Copies to ensure originals untouched
+X_resampled_under, y_resampled_under = rus.fit_resample(X.copy(), y.copy()) # Copies to ensure originals untouched
 # Train-learn split with resampled data
-X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_resampled_under, y_resampled_under, test_size=0.2, random_state=42)
 
 # ========== Models w/ Undersampled Data ==========
 print("\n===== Undersampled Data =====")
+# === Logistic Regression ===
+print("\nLogistic Regression")
+# Create/Train
+regression_model = LogisticRegression(max_iter=500)
+regression_model.fit(X_train, y_train)
+# Test
+y_pred = regression_model.predict(X_test)
+# Evaluation
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+# === SVM Classification ===
+print("\nSVM Classification")
+# Create/Train
+svm_model = SVC(kernel='poly', C=1.0)  # You can adjust the kernel and C parameter
+svm_model.fit(X_train, y_train)
+# Test
+y_pred = svm_model.predict(X_test)
+# Evaluation
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+print("Classification Report:\n", classification_report(y_test, y_pred, zero_division=1))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+# === kNN Classification ===
+print("\nkNN Classification")
+# Create/Train
+knn_model = KNeighborsClassifier(n_neighbors=15)  # You can adjust the number of neighbors
+knn_model.fit(X_train, y_train)
+# Test
+y_pred = knn_model.predict(X_test)
+# Evaluation
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+# ========== Oversampling Data ==========
+smote = SMOTE(random_state=42) # Majority of games are value=2 (Home team loses), so we remove not majority to balance (less 0 and 1)
+# Fit and apply the undersampling
+X_resampled_over, y_resampled_over = smote.fit_resample(X.copy(), y.copy()) # Copies to ensure originals untouched
+# Train-learn split with resampled data
+X_train, X_test, y_train, y_test = train_test_split(X_resampled_over, y_resampled_over, test_size=0.2, random_state=42)
+# ========== Models w/ Oversampled Data ==========
+print("\n===== Oversampled Data =====")
 # === Logistic Regression ===
 print("\nLogistic Regression")
 # Create/Train
