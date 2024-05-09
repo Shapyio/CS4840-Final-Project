@@ -1,4 +1,4 @@
-# Machine-Leanring-Final-Project
+# Machine-Learning-Final-Project
 Soccer match prediction ML model.
 
 ## Table of Contents
